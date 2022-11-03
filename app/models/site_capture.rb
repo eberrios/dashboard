@@ -1,0 +1,2 @@
+class SiteCapture < ApplicationRecord
+end

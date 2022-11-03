@@ -1,0 +1,2 @@
+class ScrapperResult < ApplicationRecord
+end

@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  site_captures_id: 1
+  scheduled_works_id: 1
+  brand: MyString
+  glosa: MyText
+  url: MyText
+  price: MyString
+  sale: MyString
+
+two:
+  site_captures_id: 1
+  scheduled_works_id: 1
+  brand: MyString
+  glosa: MyText
+  url: MyText
+  price: MyString
+  sale: MyString

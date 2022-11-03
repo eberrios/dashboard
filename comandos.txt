@@ -1,0 +1,23 @@
+Model
+rails g model SiteCapture name:string description:text url_site:text status_site:boolean
+rails g model ScheduledWork site_captures_id:integer date_time:datetime status_scheduled:boolean
+rails g model ScrapperResult site_captures_id:integer scheduled_works_id:integer brand:string glosa:text url:text price:string sale:string
+
+Controller
+    rails g controller Dashboards index
+
+
+
+
+rails d model SiteCapture name:string description:text url_site:text status_site:boolean
+rails d model ScheduledWork site_captures_id:integer date_time:datetime status_scheduled:boolean
+rails d model ScrapperResult site_captures_id:integer scheduled_works_id:integer brand:string glosa:text url:text price:string sale:string
+
+
+
+
+ScrapperResult.where(brand:"Brother").collect(&:updated_at).strftime("%m")
+ScrapperResult.where(brand:"Brother", site_captures_id:3).count
+ScrapperResult.where(brand:"Brother", site_captures_id:3, glosa:"DR820 Drum Cartridge").count
+ScrapperResult.where(brand:"Brother", site_captures_id:3, glosa:"DR820 Drum Cartridge").collect(&:updated_at).strftime("%m")
+ScrapperResult.where(brand:"Brother", site_captures_id:3, glosa:"DR820 Drum Cartridge").collect(&   :updated_at)
