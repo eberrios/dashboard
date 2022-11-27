@@ -1,0 +1,31 @@
+
+ @import 'bootstrap/scss/bootstrap';
+
+ 
+.badge-warning {
+    color: #e81938;
+    background-color: rgba(232, 25, 56, 0.1);
+  }
+  
+  .badge-success {
+    background-color: rgba(4, 177, 118, 0.1);
+    color: #04b176;
+  }
+  
+  .badge-pill-xl {
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.47;
+  
+    &.badge-warning {
+      border: 1px solid #e81938;
+    }
+  
+    &.badge-success {
+      border: 1px solid #04b176;
+    }
+  }
+  

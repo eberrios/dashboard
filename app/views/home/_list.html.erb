@@ -1,0 +1,30 @@
+<table id="datatable" class="table table-borderless table-thead-bordered table-nowrap table-align-middle card-table dataTable no-footer" role="grid" aria-describedby="datatable_info">
+    <thead class="thead-light">
+        <tr role="row">
+            <th aria-label="Full name">Brand</th>
+            <th aria-label="Status: activate to sort column ascending">Status</th>
+            <th aria-label="Status: activate to sort column ascending">Description</th>
+            <th aria-label="Type: activate to sort column ascending">Date time</th>
+            <th aria-label="Email">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <% @list.each do |product| %>
+        <tr role="row" class="odd">
+            <td class="table-column-ps-0">
+            <a href='<%= product[:url] %>'><%= product[:brand] %></td></a>
+            <td><span class="btn-block badge badge-pill badge-success">Successful</span></td>
+            <td><%= product[:glosa] %></td>
+            <td><%= product[:created_at] %></td>
+            <td>$ <%= format_number(product[:price]) %></td>
+            <td>
+                <div class="input-group mb-3">
+                    <%= button_to "See more", detail_path(product[:id]), :id => "open-contacts-dialog-btn", :class => "btn btn-primary btn-sm", :method => :get %>
+                </div>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+

@@ -1,0 +1,30 @@
+<div class="container mt-4 border">
+    <div class="container-content">
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <h3>Historical product</h3>
+                        <%#= line_chart @product.group_by_day(:updated_at, format: "%B %d, %Y").count, discrete: true %>
+                        <%= column_chart @product.pluck(:created_at, :price)%>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <h3>Historical product</h3>
+                        <%= render 'list' %>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+    

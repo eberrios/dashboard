@@ -14,7 +14,7 @@ end
 1.times do |i|
     ScrapperResult.create(site_captures_id: SiteCapture.last.id , scheduled_works_id: ScheduledWork.first.id , brand:"Brother", glosa: "DR630 Drum Unit (DR630)", url:"http://google.cl", price:"#{rand(10000)}", sale:"#{rand(1000)}")
 end
-
+    
 
 
 #segunda empresa

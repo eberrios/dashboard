@@ -4,25 +4,22 @@
 // that code so it'll be compiled.
 
 //= require bootstrap-table/bootstrap-table
+
+//= require chartkick
+//= require Chart.bundle    
+
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import Chart from 'chart.js/auto';
 
-Rails.start()
-Turbolinks.start()
-ActiveStorage.start()
+require("@rails/ujs").start()
+require("turbolinks").start()
+require("@rails/activestorage").start()
+require("channels")
 
-document.addEventListener('turbolinks:load', () => {
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: JSON.parse(ctx.canvas.dataset.labels),
-        datasets: [{
-            data: JSON.parse(ctx.canvas.dataset.data),
-        }]
-    },
-    });
-})
+require('bootstrap')
+require("@fortawesome/fontawesome-free/js/all");
+
+import "chartkick/chart.js"
