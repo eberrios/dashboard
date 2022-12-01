@@ -1,37 +1,50 @@
-
-<section class="auth-section auth-section-dual">
-  <div class="container-fluid">
-    <div class="row full-height align-items-center">
-      <div class="col-12 col-md-6 col-lg-7">
-        <div class="auth-box mx-auto">
-          <h2>Log in</h2>
-
-          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <div class="form-group auth-form-group">
-              <%= f.label :email %><br />
-              <%= f.email_field :email, class: "form-control auth-form-control", autofocus: true, autocomplete: "email" %>
-            </div>
-
-            <div class="form-group auth-form-group">
-              <%= f.label :password %><br />
-              <%= f.password_field :password, class: "form-control auth-form-control", autocomplete: "current-password" %>
-            </div>
-
-            <% if devise_mapping.rememberable? %>
-              <div class="form-group auth-form-group">
-                <%= f.check_box :remember_me %>
-                <%= f.label :remember_me %>
+<div class="container mt-4">
+  <div class="container-content">
+    <div class="row">
+      <div class="col-3"></div>
+        <div class="col-5">
+            <div class="card mb-3 mb-lg-5">
+                <!-- Header -->
+                <div class="card-header">
+                  <div class="row">
+                    <div class="col-7 text-left">
+                      <h2>Log in</h2>
+                    </div>
+                    <div class="col-5 text-right">
+                      <img src="<%= asset_path  "logo-cartouches_325x.avif" %>" alt="" width="150" height="50">
+                    </div>
+                  </div>
+                </div>
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-12 col-md-12">
+                        <div class="form-group auth-form-group">
+                          <%= f.label :email %><br />
+                          <%= f.email_field :email, class: "form-control auth-form-control", autofocus: true, autocomplete: "email" %>
+                        </div>
+                        <div class="form-group auth-form-group">
+                          <%= f.label :password %><br />
+                          <%= f.password_field :password, class: "form-control auth-form-control", autocomplete: "current-password" %>
+                        </div>
+                        <% if devise_mapping.rememberable? %>
+                          <div class="form-group auth-form-group">
+                            <%= f.check_box :remember_me %>
+                            <%= f.label :remember_me %>
+                          </div>
+                        <% end %>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="card-footer">
+                      <div class="form-group auth-form-group">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                        
+                      </div>
+                    </div>
+                <% end %>
               </div>
-            <% end %>
-
-            <div class="form-group auth-form-group">
-              <%= f.submit class: "btn btn-primary btn-block auth-btn", "Log in" %>
-            </div>
-          <% end %>
-
-          <%= render "admins/shared/links" %>
-        </div>
+          </div>
       </div>
-    </div>
   </div>
-</section>
+</div>

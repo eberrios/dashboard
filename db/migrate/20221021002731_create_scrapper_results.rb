@@ -4,7 +4,7 @@ class CreateScrapperResults < ActiveRecord::Migration[6.1]
       t.integer :site_captures_id
       t.integer :scheduled_works_id
       t.string :brand
-      t.text :glosa
+      t.text :name
       t.text :url
       t.string :price
       t.string :sale

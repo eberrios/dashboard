@@ -1,99 +1,85 @@
-<div class="container mt-4 border">
-  <div class="container-content">
-    <div class="row">
-        <div class="col-12">
-            <div class="card mb-3 mb-lg-5">
-                <!-- Header -->
-                <div class="card-header">
-                    <div class="row justify-content-between align-items-center flex-grow-1">
-                        <div class="col-md">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h4 class="card-header-title">Last 5 charges</h4>
-                            </div>
+<div class="row">
+    <div class="col-12">
+        <div class="card mb-3 mb-lg-5">
+            <!-- Header -->
+            <div class="card-header">
+                <div class="row justify-content-between align-items-center flex-grow-1">
+                    <div class="col-md">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="card-header-title">Last <b><%=@list.count%></b> charges</h4>
                         </div>
                     </div>
                 </div>
-                <!-- Table -->
-                <div class="table-responsive datatable-custom">
-                       <%= render 'list' %>
-                    <div class="dataTables_info" id="datatable_info" role="status" aria-live="polite"></div>
-                </div>
-                <!-- End Table -->
-                <!-- Footer -->
-                <div class="card-footer"></div>
-                <!-- End Footer -->
             </div>
+            <!-- Table -->
+            <div class="table-responsive datatable-custom">
+                    <%= render 'list' %>
+                <div class="dataTables_info" id="datatable_info" role="status" aria-live="polite"></div>
+            </div>
+            <!-- End Table -->
+            <!-- Footer -->
+            <div class="card-footer">
+            
+            </div>
+            <!-- End Footer -->
         </div>
-        <div class="col-6">
-            <div class="card mb-2 mb-lg-4">
-                
-                <!-- Header -->
-                <div class="card-header">
-                    <div class="row justify-content-between align-items-center flex-grow-1">
-                        <div class="col-md">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h4 class="card-header-title">Export list</h4>
+    </div>
+    <div class="col-12 col-sm-12">
+        <div class="card mb-2 col-sm-12 mb-lg-4">
+            
+            <!-- Header -->
+            <div class="card-header">
+                <div class="row justify-content-between align-items-center flex-grow-1">
+                    <div class="col-md">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="card-header-title">Filter list</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <%= form_with url: home_show_url, method: :get do |form| %>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="input-group input-group-default mb-1">
+                                <span class="input-group-text" id="inputGroup-sizing-default">First date</span>
+                                <input type="text" name="fdate" id="fdate" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required="required">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="input-group input-group-default mb-1">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Last date</span>
+                                <input type="text" name="ldate" id="ldate" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required="required">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="input-group input-group-default mb-1">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Text</span>
+                                <input type="text" name="brand" id="brand" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3 col-md-3 ">
+                            <div class="input-group mb-3">
+                                <button type="submit" class="btn btn-primary">Search</button>
+                            </div>
+                        </div>
+                        <div class="col-3 col-md-3">
+                            <div class="input-group mb-3">
+                                <button type="button" class="btn btn-primary">Export</button>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <%= form_with url: show_url(1), method: :post do |form| %>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-6 mb-2 ">
-                                <div class="input-group input-group-default mb-1">
-                                    <span class="input-group-text" id="inputGroup-sizing-default">First date</span>
-                                    <input type="text" name="fdate" id="fdate" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required="required">
-                                </div>
-                            </div>
-                            <div class="col-6 mb-2 ">
-                                <div class="input-group input-group-default mb-1">
-                                    <span class="input-group-text" id="inputGroup-sizing-default">Last date</span>
-                                    <input type="text" name="ldate" id="ldate" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required="required">
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6 mb-2 ">
-                                <div class="input-group input-group-default mb-1">
-                                    <span class="input-group-text" id="inputGroup-sizing-default">Business</span>
-                                    <%= select_tag(:city_id, options_for_select(@site_array), class: 'form-control', name:"business", id: "business") %>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="row">
-                            <div class="col-6 mb-2 ">
-                                <div class="input-group input-group-default mb-1">
-                                    <span class="input-group-text" id="inputGroup-sizing-default">Brand</span>
-                                    <input type="text" name="brand" id="brand" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                                    <%= select_tag(:city_id, options_for_select(@brand), class: 'form-control', name:"business", id: "business") %>
-
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3">
-                                <div class="input-group mb-3">
-                                    <button type="submit" class="btn btn-primary">Search</button>
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="input-group mb-3">
-                                    <button type="button" class="btn btn-primary">Export</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <% end %>
-            </div>
+            <% end %>
         </div>
-        </div>
-        </div>
-        </div>
+    </div>
+</div>
 
 
 

@@ -8,7 +8,7 @@
   }
   
   .badge-success {
-    background-color: rgba(4, 177, 118, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
     color: #04b176;
   }
   
@@ -29,3 +29,63 @@
     }
   }
   
+.btn-primary{
+  color: white;
+  background: #32A12A;
+  border-color: #32A12A;
+  cursor: pointer;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  min-height: 40px;
+}
+
+
+.card-header{
+  background: #dbdbdb !important;
+  letter-spacing: -0.4px !important;
+  border-color: #dbdbdb !important;
+  border-radius: 10px;
+  max-width: 100%;
+  width: 100%;
+  padding: 20px;
+  
+}
+
+.row{
+  border-color: transparent !important;
+}
+
+.card{
+  border-color: #dbdbdb !important;
+}
+
+
+.apple_pagination {
+  background: #f1f1f1;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  padding: 1em;
+  cursor: default; }
+.apple_pagination a, .apple_pagination span {
+  padding: 0.2em 0.3em; }
+.apple_pagination .disabled {
+  color: #aaaaaa; }
+.apple_pagination .current {
+  font-style: normal;
+  font-weight: bold;
+  background-color: #bebebe;
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+  line-height: 1.5;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+  text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px; }
+.apple_pagination a {
+  text-decoration: none;
+  color: black; }
+.apple_pagination a:hover, .apple_pagination a:focus {
+  text-decoration: underline; }
+

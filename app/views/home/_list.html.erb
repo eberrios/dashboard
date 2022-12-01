@@ -2,22 +2,25 @@
     <thead class="thead-light">
         <tr role="row">
             <th aria-label="Full name">Brand</th>
-            <th aria-label="Status: activate to sort column ascending">Status</th>
-            <th aria-label="Status: activate to sort column ascending">Description</th>
-            <th aria-label="Type: activate to sort column ascending">Date time</th>
-            <th aria-label="Email">Price</th>
+            <th aria-label="Name">Description</th>
+            <th aria-label="price">Price</th>
+            <th aria-label="Code company">Code</th>
+            <th aria-label="Date capture">Date time</th>
         </tr>
     </thead>
     <tbody>
         
         <% @list.each do |product| %>
         <tr role="row" class="odd">
-            <td class="table-column-ps-0">
-            <a href='<%= product[:url] %>'><%= product[:brand] %></td></a>
-            <td><span class="btn-block badge badge-pill badge-success">Successful</span></td>
-            <td><%= product[:glosa] %></td>
+            <td class="table-column-ps-0"><%= product[:brand] %></td>
+            <td><%= product[:name] %></td>
+            <td>$ <%= product[:price] %></td>
+            <td>
+                <a href='<%= product[:url] %>'>
+                    <%= product[:sku] %>
+                </a>
+            </td>
             <td><%= product[:created_at] %></td>
-            <td>$ <%= format_number(product[:price]) %></td>
             <td>
                 <div class="input-group mb-3">
                     <%= button_to "See more", detail_path(product[:id]), :id => "open-contacts-dialog-btn", :class => "btn btn-primary btn-sm", :method => :get %>
